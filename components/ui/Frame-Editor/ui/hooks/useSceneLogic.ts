@@ -25,7 +25,6 @@ export const useSceneLogic = () => {
         const scene = new Scene({
             canvas_id: "frame_editor", // ID of the HTML canvas element
             options: {
-                // backgroundColor: "red",
                 selection: false,
                 renderOnAddRemove: true, // Render canvas when objects are added or removed
             },

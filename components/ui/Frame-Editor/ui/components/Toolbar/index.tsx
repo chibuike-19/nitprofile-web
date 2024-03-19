@@ -3,6 +3,8 @@ import React, { useEffect } from "react"
 import { useSceneContext } from "@frame-editor/ui/hooks"
 import { ICreateNodeOptions } from "@frame-editor/logic"
 import { ImageControls } from "./ImageControls"
+import { ToolbarButton } from "./ToolbarButton"
+import { ConditionalComponent } from "@/components/animation"
 
 interface IToolbarProps {
     /**
@@ -124,26 +126,19 @@ export const Toolbar = (props: IToolbarProps) => {
 
     return (
         <div>
-            {selectedItem && selectedItem.type === "circle" && <ImageControls />}
+            {/* {selectedItem && selectedItem.type === "circle" && <ImageControls />} */}
 
-            {selectedItem && <button onClick={handleDelete}>Delete</button>}
+            {/* {selectedItem && <button onClick={handleDelete}>Delete</button>} */}
 
             {/* {selectedItem && selectedItem.type === "i-text" && <TextControls />} */}
 
-            {!selectedItem &&
-                baseControls.map((control, index) => (
-                    <button key={index} onClick={() => control.handler()}>
-                        {control.name}
-                    </button>
-                ))}
+            <ConditionalComponent isMounted={!selectedItem}>
+                <div className="grid-cols-toolbar_buttons_grid grid gap-4">
+                    {baseControls.map((control, index) => (
+                        <ToolbarButton key={index} label={control.name} onClick={() => control.handler()} />
+                    ))}
+                </div>
+            </ConditionalComponent>
         </div>
     )
 }
-
-// Items to Create
-// User Image
-// Program Name
-// User Name
-// Date
-// Normal Image
-// Normal Text

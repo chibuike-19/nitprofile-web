@@ -25,7 +25,7 @@ export function ModalLayout(props: IModalProps) {
     }, [isMounted])
 
     return createPortal(
-        <ConditionalComponent isMounted={showModal} delay={200}>
+        <ConditionalComponent isMounted={showModal} delay={100}>
             <div className="fixed bottom-0 left-0 right-0 top-0 z-10 ">
                 <div
                     className="absolute bottom-0 left-0 right-0 top-0 z-50 h-screen  w-screen scale-100 bg-black opacity-20 transition-all duration-300 ease-in-out"

@@ -26,6 +26,18 @@ const config: Config = {
                 "4xl": "clamp(3.051rem, 1.5vw, 7.992rem)",
                 "5xl": "clamp(3.814rem, 1.5vw, 11.302rem)",
             },
+
+            boxShadow: {
+                toolbar_button: "0 0 40px 40px #e74c3c inset",
+            },
+
+            colors: {
+                primary: "#62CF3A",
+            },
+
+            gridTemplateColumns: {
+                toolbar_buttons_grid: "repeat(auto-fit, minmax(200px, 1fr));",
+            },
         },
     },
 

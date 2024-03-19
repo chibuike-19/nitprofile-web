@@ -2,7 +2,6 @@
 
 import { RequireAuthentication } from "@/components/middlewares"
 import { Navbar } from "@/components/ui"
-import { MemoizedFrameEditor } from "@/components/ui/Frame-Editor/ui"
 import { Sidebar } from "@/components/ui/Sidebar"
 import { getAllowedRoles } from "@/utils"
 import { usePathname } from "next/navigation"
