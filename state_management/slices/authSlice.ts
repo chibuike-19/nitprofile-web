@@ -33,7 +33,7 @@ const dummyUser = {
     resetToken: null,
     profilePicSecureUrl: null,
     isVerified: true,
-    role: "SUPER ADMIN" as IRole,
+    role: "USER" as IRole,
 }
 
 const initialState: IInitialState = {

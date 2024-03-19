@@ -15,10 +15,10 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
             <div className="h-full min-h-screen bg-[#ededee]">
                 <Navbar />
 
-                <div className="flex overflow-scroll ">
+                <div className="flex ">
                     <Sidebar />
 
-                    <main id="main-content" className="relative !z-0 w-full px-8 pt-[40px] md:ml-[15rem] ">
+                    <main id="main-content" className="relative !z-0 w-full px-8 pt-[40px] md:ml-[18rem] ">
                         {children}
                     </main>
                 </div>

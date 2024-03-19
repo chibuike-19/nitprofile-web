@@ -1,10 +1,14 @@
 import { IRole } from "@/state_management"
 import { PiGraduationCapLight } from "react-icons/pi"
+import { getAsset } from "@/utils"
+import { StaticImageData } from "next/image"
+
+
 
 const adminRoutes = [
     {
         name: "Home",
-        icon: <PiGraduationCapLight />,
+        icon: getAsset("home.svg", "icons"),
         route: "/admin",
         activeRoutes: ["", undefined],
     },
@@ -13,15 +17,33 @@ const adminRoutes = [
 const userRoutes = [
     {
         name: "Home",
-        icon: <PiGraduationCapLight />,
-        route: "/admin",
-        activeRoutes: [""],
+        icon: getAsset("home.svg", "icons"),
+        route: "/student",
+        activeRoutes: ["/student"],
+    },
+    {
+        name: "Generate Profile",
+        icon: getAsset("profile.svg", "icons"),
+        route: "/student/generate-profile",
+        activeRoutes: ["/student/generate-profile"],
+    },
+    {
+        name: "Programs",
+        icon: getAsset("program.svg", "icons"),
+        route: "/student/programs",
+        activeRoutes: ["/student/programs"],
+    },
+    {
+        name: "Certificates",
+        icon: getAsset("certificate.svg", "icons"),
+        route: "/student/certificates",
+        activeRoutes: ["/student/certificates"],
     },
 ]
 
 interface ISidebarData {
     name: string
-    icon: string | React.ReactNode | null
+    icon: string | StaticImageData
     route: string
     activeRoutes: (string | undefined)[]
 }
@@ -34,7 +56,7 @@ export const getSidebarData = (role: IRole): ISidebarData[] => {
         case "SUPER ADMIN":
             return [
                 ...adminRoutes,
-                { name: "Admins", icon: <PiGraduationCapLight />, route: "/admin/name", activeRoutes: [""] },
+                { name: "Admins", icon:getAsset("home.svg", "icons"), route: "/admin/name", activeRoutes: [""] },
             ]
 
         case "USER":
